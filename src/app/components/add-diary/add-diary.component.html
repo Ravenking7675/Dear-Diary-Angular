@@ -1,0 +1,21 @@
+<form (ngSubmit)="saveDiary()">
+
+    <input type="text" 
+            name="title" 
+            [(ngModel)]="diary.title" 
+            placeholder="Enter title"/>
+
+    <input type="text" 
+            name="content" 
+            [(ngModel)]="diary.content" 
+            placeholder="Enter Description"/>
+
+    <textarea type="text" 
+            name="users" 
+            [(ngModel)]="diary.userId" 
+            placeholder="Enter User ID"></textarea>
+
+    <button type="submit">Add Diary</button>
+    <button *ngIf="diary.id" (click)="deleteDiary(diary.id)">Delete</button>
+
+</form>

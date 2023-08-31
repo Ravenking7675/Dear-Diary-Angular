@@ -1,0 +1,13 @@
+<a routerLink="/addDiary">Add Diary</a>
+
+<input type="text"
+        [(ngModel)]="filter.keyword"
+        name="keyword"
+        (input)="listDiary()"
+        placeholder="Enter to search">
+
+<div *ngFor="let diary of diaries">
+    <h1>{{diary.title}}</h1>
+    <h3>{{diary.content}}</h3>
+    <a routerLink="/editDiary/{{diary.id}}">Edit</a>
+</div>
